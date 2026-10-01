@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  body {
+    @apply bg-[#0a0a0f] text-white font-sans antialiased;
+    background-image:
+      radial-gradient(circle at top right, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+@utility glass-card {
+  @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+
+/* Markdown rendered from the AI */
+.prose-lunor p { margin: 0.5em 0; }
+.prose-lunor ul, .prose-lunor ol { margin: 0.5em 0; padding-left: 1.25em; list-style: disc; }
+.prose-lunor ol { list-style: decimal; }
+.prose-lunor code { background: rgb(0 0 0 / 0.4); padding: 0.1em 0.35em; border-radius: 4px; color: #f9a8d4; font-size: 0.9em; }
+.prose-lunor pre { background: #0d0d14; border: 1px solid rgb(255 255 255 / 0.08); padding: 0.9em; border-radius: 10px; overflow-x: auto; margin: 0.75em 0; }
+.prose-lunor pre code { background: none; padding: 0; color: #e2e8f0; }
+.prose-lunor strong { color: white; }
+.prose-lunor h1, .prose-lunor h2, .prose-lunor h3 { font-weight: 700; margin: 0.8em 0 0.4em; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
