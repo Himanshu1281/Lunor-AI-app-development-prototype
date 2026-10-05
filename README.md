@@ -32,6 +32,19 @@ and falls back to **Anthropic Claude** when only `ANTHROPIC_API_KEY` is set.
 
 Production: `npm run build && npm start` (Express serves `dist/` and the API on port 8787).
 
+## Deploy (Render, free)
+
+The app is one Node server (Express serves the built frontend and the API), so it needs a host that runs a
+long-lived process. Each AI stage can take 1–3 minutes, which rules out short serverless timeouts.
+
+1. Push this repo to GitHub.
+2. On [render.com](https://render.com): **New → Blueprint**, then pick the repo. `render.yaml` configures everything.
+3. When prompted, paste your `GEMINI_API_KEY`.
+4. Open the `https://<name>.onrender.com` URL once the deploy finishes.
+
+The free plan sleeps after 15 minutes of inactivity, so the first visit after that takes ~50s to wake up.
+Railway and Fly.io work the same way: build `npm run build`, start `npm start`, set `GEMINI_API_KEY`.
+
 ## Architecture
 
 ```
